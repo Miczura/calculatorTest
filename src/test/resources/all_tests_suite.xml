@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="All Calculator tests">
-
+    <test name="Calculator calculations tests">
+        <classes>
+            <class name="com.calc.web.tests.CalculatorTests"/>
+        </classes>
+    </test>
     <test name="Calculator History tests">
         <classes>
             <class name="com.calc.web.tests.CalculatorHistoryTests"/>
