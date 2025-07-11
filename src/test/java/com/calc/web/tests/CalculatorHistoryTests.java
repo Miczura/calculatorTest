@@ -1,11 +1,12 @@
 package com.calc.web.tests;
-
+import com.calc.web.listeners.SimpleRetryAnalyzer;
 import com.calc.web.pages.CalculatorPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CalculatorHistoryTests extends TestBase{
-    @Test
+
+    @Test(retryAnalyzer = SimpleRetryAnalyzer.class)
     public void verifyHistoryDropdownContainsExecutedOperations(){
         //Given
         String firstCalculationInput = "35*999+(100/4)";
