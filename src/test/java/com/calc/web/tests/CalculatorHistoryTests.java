@@ -32,7 +32,7 @@ public class CalculatorHistoryTests extends TestBase{
         //Then
         var results = calcPage.getHistoryItems();
 
-        Assert.assertEquals(results.get(1),thirdCalculationInput);
+        Assert.assertEquals(results.get(0),thirdCalculationInput);
         Assert.assertEquals(results.get(1),secondCalculationInput);
         Assert.assertEquals(results.get(2),firstCalculationInput);
     }
