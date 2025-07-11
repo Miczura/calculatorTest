@@ -55,7 +55,49 @@ public class CalculatorPage {
     @FindBy(xpath = "//div[@id='hist']//span[contains(@class,'glyphicon glyphicon-chevron-down')]")
     private WebElement historyDropdown;
 
+    public CalculatorPage clickRad(){
+        radButton.click();
+        return this;
+    }
+    public CalculatorPage clickCosinus(){
+        cosinusButton.click();
+        return this;
+    }
+    public CalculatorPage clickSqrt(){
+        sqrtButton.click();
+        return this;
+    }
+    public CalculatorPage clickPi(){
+        piButton.click();
+        return this;
+    }
+    public CalculatorPage enterNumber(int number){
+        String xPath = number == 0 ? "//button[@id='Btn0']" : "//button[contains(text(),'"+number+"')]";
+        WebElement numberButton = DriverManager.getWebDriver().findElement(By.xpath(xPath));;
+        numberButton.click();
+        return this;
+    }
+    public CalculatorPage clickLeftParenthesis(){
+        leftParenthesis.click();
+        return this;
+    }
+    public CalculatorPage clickRightParenthesis(){
+        rightParenthesis.click();
+        return this;
+    }
+    public CalculatorPage clickDivide(){
+        divideButton.click();
+        return this;
+    }
+    public CalculatorPage clickAdd(){
+        addButton.click();
+        return this;
+    }
 
+    public CalculatorPage clickMultiply(){
+        multiplyButton.click();
+        return this;
+    }
 
     public CalculatorPage clearResult() {
         clearButton.click();
