@@ -1,11 +1,12 @@
 package com.calc.web.tests;
 
+import com.calc.web.listeners.SimpleRetryAnalyzer;
 import com.calc.web.pages.CalculatorPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CalculatorTests extends TestBase{
-    @Test
+    @Test(retryAnalyzer = SimpleRetryAnalyzer.class)
     public void verifyCalculateComplexExpressionReturnsCorrectResult(){
 
         CalculatorPage calcPage = new CalculatorPage();
@@ -25,7 +26,7 @@ public class CalculatorTests extends TestBase{
     }
 
 
-    @Test
+    @Test(retryAnalyzer = SimpleRetryAnalyzer.class)
     public void verifyCosPiCalculationReturnsCorrectResult(){
 
         CalculatorPage calcPage = new CalculatorPage();
@@ -40,7 +41,7 @@ public class CalculatorTests extends TestBase{
 
     }
 
-    @Test()
+    @Test(retryAnalyzer = SimpleRetryAnalyzer.class)
     public void verifySqrtCalculationReturnsCorrectResult(){
 
         CalculatorPage calcPage = new CalculatorPage();
