@@ -2,11 +2,17 @@ package com.calc.web.tests;
 
 import com.calc.web.listeners.SimpleRetryAnalyzer;
 import com.calc.web.pages.CalculatorPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CalculatorTests extends TestBase{
+
+    @Severity(SeverityLevel.CRITICAL)
     @Test(retryAnalyzer = SimpleRetryAnalyzer.class)
+    @Description("Calculate complex expression 35*999+(100/4) and verify the result equals 34990.")
     public void verifyCalculateComplexExpressionReturnsCorrectResult(){
 
         CalculatorPage calcPage = new CalculatorPage();
@@ -25,8 +31,9 @@ public class CalculatorTests extends TestBase{
 
     }
 
-
+    @Severity(SeverityLevel.NORMAL)
     @Test(retryAnalyzer = SimpleRetryAnalyzer.class)
+    @Description("Calculate cos(pi) using radians mode and verify the result equals -1.")
     public void verifyCosPiCalculationReturnsCorrectResult(){
 
         CalculatorPage calcPage = new CalculatorPage();
@@ -40,8 +47,9 @@ public class CalculatorTests extends TestBase{
         Assert.assertEquals(calcPage.getResult(), "-1");
 
     }
-
+    @Severity(SeverityLevel.NORMAL)
     @Test(retryAnalyzer = SimpleRetryAnalyzer.class)
+    @Description("Calculate sqrt(81) and verify the result equals 9.")
     public void verifySqrtCalculationReturnsCorrectResult(){
 
         CalculatorPage calcPage = new CalculatorPage();
