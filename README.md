@@ -36,7 +36,7 @@ It is designed for testing a simple web calculator application.
    mvn clean test
 5. **Run single test class**
    ```
-   mvn clean test =Dtest:className
+   mvn clean test -Dtest=className
 6. **Run basic allure report**
    ```
    mvn allure:serve
